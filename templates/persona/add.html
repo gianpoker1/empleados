@@ -1,0 +1,52 @@
+{% extends 'templates/base.html' %}
+
+
+{% block titulo %}
+    Agregar Empleado
+{% endblock titulo %}
+
+
+{% block content %}
+    {% include 'templates/includes/header.html' %}
+    <div class="grid-x">
+        <div class="cell">Registrar Empleado</div>
+        <form class="cell grid-x grid-margin-x" method="POST" enctype="multipart/form-data">{%csrf_token%}
+            <div class="medium-6 cell">
+                <label>Nombres:
+                    {{form.first_name}}                  
+                </label>
+              </div>
+              <div class="medium-6 cell">
+                <label>Apellidos:
+                    {{form.last_name}}                  
+                </label>
+              </div>
+              <div class="medium-6 cell">
+                <label>Trabajo:
+                    {{form.job}}                  
+                </label>
+              </div>
+              <div class="medium-6 cell">
+                <label>Departamento:
+                    {{form.departamento}}                  
+                </label>
+              </div>
+              <div class="medium-12 cell">
+                <label>Habilidades:
+                    {{form.habilidades}}                  
+                </label>
+              </div>
+              <div class="medium-12 cell">
+                <label>Imagen:
+                    {{form.avatar}}                  
+                </label>
+              </div>
+              <div class="medium-12 cell">
+                    <button type="submit" class="button success">Guardar</button>                  
+              </div>
+
+        </form>
+
+    </div>
+{% endblock content %}
+

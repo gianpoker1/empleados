@@ -1,0 +1,44 @@
+{% extends 'templates/base.html' %}
+
+
+{% block titulo %}
+    Agregar Departamento con Empleado
+{% endblock titulo %}
+    
+
+{% block content %}
+    {% include 'templates/includes/header.html' %}    
+    <div class="grid-x">
+        <div class="cell">Registar Departamento</div>
+        <form class="cell callout grid-x grid-margin-x" method="POST" enctype="multipart/form-data">
+        {%csrf_token%}
+        <div class="cell">Datos Empleado</div>
+        <div class="medium-6 cell">
+            <label>Nombres:
+                {{form.nombre}}
+            </label>
+        </div>
+        <div class="medium-6 cell">
+            <label>Apellidos:
+                {{form.apellidos}}
+            </label>
+        </div>
+        <div class="cell">Datos Departamento</div>
+        <div class="medium-6 cell">
+            <label>Nombre:
+                {{form.departamento}}
+            </label>
+        </div>
+        <div class="medium-6 cell">
+            <label>Nombre Corto:
+                {{form.shorname}}
+            </label>
+        </div>
+        <div class="medium-12 cell">
+            <button type="submit" class="button success">Guardar</button>                  
+      </div>
+        </form>
+    </div>
+
+{% endblock content %}
+
